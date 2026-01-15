@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Qui suis-je – Gérald Canet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    /* =========================
+       Haut de page
+    ========================== */
+    .page-top{
+      max-width:1100px;
+      margin:0 auto;
+      padding:26px 18px 0;
+      text-align:center;
+    }
+    .page-top h1{
+      margin:18px 0 6px;
+      font-size:28px;
+      letter-spacing:.02em;
+      color:#322321;
+    }
+    .page-top .btn-row{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:10px 0 10px;
+    }
+
+    .qsj-hero-intro{
+      max-width:980px;
+      margin:0 auto 26px;
+      padding:0 18px;
+      text-align:center;
+    }
+    .qsj-hero-intro p{
+      max-width:820px;
+      margin:10px auto 0;
+      font-size:16px;
+      line-height:1.8;
+      color:rgba(50,35,33,.85);
+    }
+
+    /* =========================
+       ✅ Layout chapitre : 2 colonnes
+       texte (gauche) + galerie (droite)
+    ========================== */
+    .chapter-layout{
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+      gap: 26px;
+      align-items: start;
+      width: 100%;
+    }
+
+    /* =========================
+       ✅ TEXTE : protection visibilité
+       (contre styles globaux)
+    ========================== */
+    .timeline-text{ min-width:0; }
+    .timeline-text,
+    .timeline-text *{
+      opacity: 1 !important;
+      visibility: visible !important;
+      color: #322321 !important;
+    }
+    .timeline-text{
+      width:100% !important;
+      max-width:100% !important;
+      display:block !important;
+      position:relative !important;
+      z-index:5 !important;
+    }
+
+    /* Important si un parent coupe */
+    .timeline-item,
+    .timeline-split{
+      overflow: visible !important;
+      height:auto !important;
+      min-height:0 !important;
+    }
+
+    /* =========================
+       Galerie à droite
+    ========================== */
+    .chapter-gallery{
+      display:grid;
+      gap:12px;
+      align-content:start;
+
+      /* ✅ auto : 2 colonnes si place, sinon 1 */
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .chapter-gallery figure{
+      margin:0;
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+      border:1px solid rgba(50,35,33,.10);
+      box-shadow: 0 10px 22px rgba(0,0,0,.06);
+    }
+
+    .chapter-gallery img{
+      display:block;
+      width:100%;
+      height:170px;
+      object-fit:contain;
+      background:#f7f5f2;
+      padding:10px;
+    }
+
+    /* ✅ une image "wide" prend 2 colonnes */
+    .chapter-gallery .wide{ grid-column: 1 / -1; }
+    .chapter-gallery .wide img{ height:190px; }
+
+    /* =========================
+       ✅ Monaco : 2 colonnes FORCÉES
+       + la wide reste full largeur
+       (pour mettre les 2 carrées côte à côte)
+    ========================== */
+    .gallery-2cols{
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery-2cols .wide{
+      grid-column: 1 / -1;
+    }
+
+    /* =========================
+       Bloc Facebook
+    ========================== */
+    .fb-proof{
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-left: 3px solid rgba(122,28,44,.35);
+      background: rgba(247,245,242,.7);
+      border-radius: 10px;
+      color: rgba(50,35,33,.9);
+    }
+    .fb-proof a{
+      color:#7a1c2c;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* =========================
+       Responsive
+    ========================== */
+    @media (max-width: 980px){
+      .chapter-layout{
+        grid-template-columns: 1fr; /* galerie sous le texte */
+      }
+      .chapter-gallery{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 720px;
+      }
+      /* Monaco garde 2 colonnes aussi */
+      .gallery-2cols{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 640px){
+      .chapter-gallery{
+        grid-template-columns: 1fr;
+        max-width: 420px;
+      }
+      .chapter-gallery img{
+        height:190px;
+      }
+      /* Monaco : 1 colonne sur téléphone */
+      .gallery-2cols{
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page-top">
+    <div class="btn-row">
+      <a href="../index.html" class="btn-qsj">← Accueil</a>
+    </div>
+    <h1>Qui suis-je&nbsp;?</h1>
+  </div>
+
+  <div class="qsj-hero-intro">
+    <p><strong>Une histoire de pâtisserie française, de passion et de transmission, sur trois générations.</strong></p>
+    <p>
+      Depuis toujours, la pâtisserie fait partie de ma vie.
+      Elle est une histoire de famille, de gestes répétés, d’exigence transmise et de gourmandise partagée.
+      Un héritage façonné au fil des générations, entre tradition française et créativité contemporaine,
+      que je poursuis aujourd’hui avec la même passion.
+    </p>
+  </div>
+
+  <section id="qui-suis-je" class="timeline-section">
+    <div class="timeline">
+
+      <!-- ======================
+           CHAPITRE 1 — Normandie
+           ====================== -->
+      <div class="timeline-item">
+        <div class="timeline-split chapter-layout">
+
+          <div class="timeline-text">
+            <div class="chapter-title">Le début de l’histoire</div>
+
+            <p>
+              Ma passion pour la pâtisserie trouve ses racines en Normandie.
+              Mon grand-père était déjà un <strong>pâtissier accompli</strong>, animé par l’amour du travail bien fait
+              et le respect du produit.
+            </p>
+
+            <p>
+              Il tenait <strong>l’Auberge Normande à Briouze</strong>, un lieu chaleureux et convivial où les desserts faits maison
+              occupaient une place essentielle. Les odeurs sucrées, les gestes précis, le soin apporté aux pièces montées
+              et aux grandes occasions faisaient déjà partie du quotidien familial.
+            </p>
+
+            <p>
+              C’est dans cet esprit de <strong>transmission, d’authenticité et de partage</strong> que cette histoire a commencé.
+            </p>
+          </div>
+
+          <div class="chapter-gallery" aria-label="Galerie – Normandie">
+            <figure><img src="../images/grand-pere-2.jpg" alt="Pièce montée réalisée par mon grand-père"></figure>
+            <figure><img src="../images/grand-pere-3.jpg" alt="Souvenir de l’Auberge Normande à Briouze"></figure>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ======================
+           CHAPITRE 2 — Monaco
+           ====================== -->
+      <div class="timeline-item">
+        <div class="timeline-split chapter-layout">
+
+          <div class="timeline-text">
+            <div class="chapter-title">La maison familiale</div>
+
+            <p>
+              Mes parents ont écrit un chapitre majeur de cette aventure en tenant, pendant plus
+              de <strong>35 ans</strong>, une pâtisserie en Principauté de Monaco.
+            </p>
+
+            <p>
+              J’ai grandi dans cette maison, au cœur d’une ambiance naturellement
+              <strong>sucrée et chocolatée</strong>, où les odeurs, les gestes et les exigences du métier faisaient partie du quotidien.
+            </p>
+
+            <p>
+              Mon père, reconnu pour son savoir-faire, a été durant cette période
+              <strong>fournisseur officiel du Prince Rainier III</strong> et élu
+              <strong>Meilleur Pâtissier de l’An 2000</strong> selon le Guide Gault &amp; Millau.
+            </p>
+
+            <p>
+              C’est durant les <strong>quinze années passées à leurs côtés</strong> que je me suis formé à ce métier,
+              dans le respect de la précision et de l’excellence.
+            </p>
+          </div>
+
+          <!-- ✅ classe gallery-2cols pour forcer 2 colonnes et mettre les 2 carrées côte à côte -->
+          <div class="chapter-gallery gallery-2cols" aria-label="Galerie – Monaco">
+            <figure class="wide"><img src="../images/monaco-1.jpg" alt="Souvenir familial en pâtisserie à Monaco"></figure>
+
+            <figure><img src="../images/monaco-2.jpg" alt="Souvenir en pâtisserie à Monaco"></figure>
+            <figure><img src="../images/monaco-3.jpg" alt="Souvenir en pâtisserie à Monaco"></figure>
+
+            <figure class="wide"><img src="../images/monaco-4.jpg" alt="Article de presse – distinction"></figure>
+            
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ======================
+           CHAPITRE 3 — Menton
+           ====================== -->
+      <div class="timeline-item">
+        <div class="timeline-split chapter-layout">
+
+          <div class="timeline-text">
+            <div class="chapter-title">Mon chemin</div>
+
+            <p>
+              À Menton, j’ai choisi de tracer mon propre chemin. D’abord aux Halles municipales,
+              puis avec l’ouverture de <strong>mon Salon Gourmand</strong>, sur l’esplanade des Sablettes.
+            </p>
+
+            <p>
+              Une aventure entrepreneuriale exigeante, faite de travail, de remises en question et
+              de passion, durant laquelle <strong>mon épouse Claire a toujours été à mes côtés</strong>.
+              Son soutien constant, son aide et sa présence, y compris dans les moments les plus difficiles,
+              ont été essentiels à la réussite de ce projet.
+            </p>
+
+            <p>
+              Nos jumeaux prenaient plaisir, de temps en temps, à venir
+              <strong>donner un petit coup de main à leur papa</strong>, dans une ambiance joyeuse et familiale,
+              simplement pour le plaisir de partager ces instants.
+            </p>
+
+            <div class="fb-proof">
+              Pour celles et ceux qui souhaitent découvrir l’historique de mon entreprise à Menton
+              (avis, publications, réalisations), je vous invite à consulter mon ancienne page professionnelle :
+              <a href="https://www.facebook.com/P%C3%A2tisserie-Menton-G%C3%A9rald-Canet-562231193806308/" target="_blank" rel="noopener noreferrer">
+                Pâtisserie Menton – Gérald Canet (Facebook)
+              </a>.
+            </div>
+          </div>
+
+          <div class="chapter-gallery" aria-label="Galerie – Menton">
+            <figure class="wide"><img src="../images/menton-1.jpg" alt=""></figure>
+            <figure><img src="../images/menton-2.jpg" alt=""></figure>
+            <figure><img src="../images/menton-3.jpg" alt=""></figure>
+            <figure><img src="../images/menton-4.jpg" alt=""></figure>
+            <figure><img src="../images/menton-5.jpg" alt=""></figure>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ======================
+           CHAPITRE 4 — Maurice
+           ====================== -->
+      <div class="timeline-item">
+        <div class="timeline-split chapter-layout">
+
+          <div class="timeline-text">
+            <div class="chapter-title">Aujourd’hui</div>
+
+            <p>
+              Aujourd’hui installé à l’île Maurice, je poursuis cette tradition familiale en proposant une
+              <strong>pâtisserie française d’exception</strong>, pensée sur mesure.
+            </p>
+
+            <p>
+              Mariages, événements privés, entreprises ou hôtels :
+              chaque création est le reflet de ce parcours, entre héritage, exigence artisanale et passion intacte.
+            </p>
+          </div>
+
+          <div class="chapter-gallery" aria-label="Galerie – Île Maurice">
+            <figure><img src="../images/maurice-1.jpg" alt="Pièce montée sur la plage à l’île Maurice"></figure>
+            <figure><img src="../images/maurice-2.jpg" alt="Pièce montée au coucher du soleil à l’île Maurice"></figure>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div style="max-width:980px;margin:26px auto 0;padding:0 18px;text-align:center;">
+      <p style="margin:0 auto 14px;line-height:1.8;color:rgba(50,35,33,.85);">
+        Chaque création est avant tout une rencontre.<br>
+        Un moment à partager, une histoire à raconter ensemble.
+      </p>
+      <a href="../index.html" class="btn-qsj">← Accueil</a>
+    </div>
+
+  </section>
+
+</body>
+</html>

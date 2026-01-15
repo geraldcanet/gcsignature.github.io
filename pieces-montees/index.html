@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pièces montées – Gérald Canet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    html, body{
+  height: 100%;
+}
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color:#322321;
+  line-height:1.7;
+
+  /* Fond rose pastel uniforme */
+  background-color: #f7e9ec;
+
+  /* Micro-texture très discrète */
+  background-image:
+    radial-gradient(rgba(255,255,255,0.35) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+
+  background-size: 120px 120px, 160px 160px;
+  background-position: 0 0, 40px 60px;
+}
+
+
+
+    .pm-page{
+      max-width:1100px;
+      margin:0 auto;
+      padding: 0 18px 46px;
+    }
+
+    /* Zone bouton */
+    .page-top{
+      max-width:1100px;
+      margin:0 auto;
+      padding:26px 18px 0;
+      text-align:center;
+    }
+    .btn-back{
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:999px;
+      background:#7b1530;
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 10px 22px rgba(0,0,0,.14);
+      border:2px solid rgba(255,255,255,.65);
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .btn-back:hover{
+      transform:translateY(-1px);
+      filter:brightness(1.03);
+    }
+
+    .pm-top{
+      text-align:center;
+      padding: 6px 0 10px;
+    }
+    .pm-top h1{
+      margin:18px 0 6px;
+      font-size:30px;
+      letter-spacing:.02em;
+      color:#322321;
+    }
+    .pm-top p{
+      max-width:860px;
+      margin:0 auto 18px;
+      opacity:.92;
+      line-height:1.75;
+    }
+
+    /* Bloc texte */
+    .pm-textblock{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      box-shadow:0 10px 26px rgba(0,0,0,.08);
+      border-radius:18px;
+      padding:22px 24px;
+      margin: 14px 0 18px;
+    }
+    .pm-textblock h2{
+      margin:0 0 10px;
+      font-size:15px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#7a4b4b;
+    }
+    .pm-textblock p{
+      margin:0 0 12px;
+      line-height:1.8;
+      color:#322321;
+    }
+    .pm-textblock p:last-child{ margin-bottom:0; }
+
+    .pm-strong{
+      font-weight:700;
+      opacity:.96;
+    }
+
+    /* Galerie */
+    .pm-photos{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      margin: 14px 0 30px;
+    }
+    .pm-photo{
+      margin:0;
+    }
+    .pm-photo img{
+      width:70%;
+      height:auto;
+      display:block;
+      margin:0 auto;
+      border-radius:14px;
+      box-shadow:0 10px 26px rgba(0,0,0,.10);
+    }
+    .pm-caption{
+      padding:12px 14px 0;
+      font-size:14px;
+      opacity:.85;
+      line-height:1.55;
+      text-align:center;
+    }
+
+    @media (max-width: 900px){
+      .pm-photo img{ width:92%; }
+    }
+
+    .pm-nextchapter{
+      margin-top: 28px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Bouton Accueil -->
+  <div class="page-top">
+    <a href="../index.html" class="btn-back">← Accueil</a>
+  </div>
+
+  <main class="pm-page">
+
+    <!-- Titre + intro -->
+    <header class="pm-top">
+      <h1>Pièces montées</h1>
+      <p>
+        Une pièce montée, c’est bien plus qu’un dessert : c’est une mise en scène, une émotion, un instant qu’on attend…
+        et dont on se souvient.
+      </p>
+    </header>
+
+    <!-- Intro -->
+    <section class="pm-textblock">
+      <h2>Une création sur mesure</h2>
+      <p>
+        Chaque pièce montée est pensée comme une œuvre unique, en harmonie avec votre univers : le lieu,
+        l’ambiance, les couleurs, les détails… tout compte.
+      </p>
+      <p class="pm-strong">
+        L’objectif : créer un “wow” visuel… et un vrai moment de gourmandise.
+      </p>
+    </section>
+
+    <!-- Mariages -->
+    <section class="pm-textblock">
+      <h2>Mariages</h2>
+      <p>
+        Couleurs, thème, fleurs, style de réception : nous définissons ensemble les proportions, les finitions
+        et l’esprit général, pour un rendu élégant et parfaitement cohérent.
+      </p>
+      <p>
+        Classique, moderne, floral, minimaliste… on cherche toujours l’équilibre entre esthétique, finesse et dégustation.
+      </p>
+      <p class="pm-strong">
+        Au moment de la découverte, la pièce montée devient naturellement la cerise sur le gâteau : un instant suspendu,
+        et un souvenir qui restera éternellement.
+      </p>
+    </section>
+
+    <!-- Galerie Mariages -->
+    <section class="pm-photos" aria-label="Galerie pièces montées – Mariages">
+      <figure class="pm-photo">
+        <img src="../images/pm-1.jpg" alt="Pièce montée de mariage sur mesure">
+        <figcaption class="pm-caption">Détails, finitions, harmonie des couleurs.</figcaption>
+      </figure>
+
+      <figure class="pm-photo">
+        <img src="../images/pm-2.jpg" alt="Pièce montée – création élégante">
+        <figcaption class="pm-caption">Une pièce pensée comme une mise en scène.</figcaption>
+      </figure>
+
+      <figure class="pm-photo">
+        <img src="../images/pm-3.jpg" alt="Pièce montée – style floral">
+        <figcaption class="pm-caption">Raffinement, équilibre, et personnalité.</figcaption>
+      </figure>
+
+      <figure class="pm-photo">
+        <img src="../images/pm-4.jpg" alt="Pièce montée – autre création de mariage">
+        <figcaption class="pm-caption">Chaque création est unique.</figcaption>
+      </figure>
+
+      <figure class="pm-photo">
+        <img src="../images/pm-5.jpg" alt="Pièce montée – autre création de mariage">
+        <figcaption class="pm-caption">Choisissez votre thème… pas de limite dans la création.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Événements -->
+    <section class="pm-textblock pm-nextchapter">
+      <h2>Événements</h2>
+      <p>
+        Anniversaires, baptêmes, communions, fêtes de famille, célébrations privées…
+        Chaque occasion mérite une création sur mesure, pensée pour s’intégrer parfaitement à votre ambiance.
+      </p>
+      <p>
+        Ici, on peut jouer avec les thèmes et les couleurs (avec justesse), tout en gardant la signature :
+        élégance, équilibre et gourmandise.
+      </p>
+      <p class="pm-strong">
+        Quelques réalisations pour vos événements privés :
+      </p>
+    </section>
+
+    <!-- Galerie Événements -->
+    <section class="pm-photos" aria-label="Galerie pièces montées – Événements">
+      <figure class="pm-photo">
+        <img src="../images/event-1.jpg" alt="Pièce montée pour anniversaire">
+        <figcaption class="pm-caption">Anniversaire : une création joyeuse et raffinée.</figcaption>
+      </figure>
+
+      <figure class="pm-photo">
+        <img src="../images/event-2.jpg" alt="Pièce montée pour anniversaire de mariage">
+        <figcaption class="pm-caption">Noces de diamant : quand l’amour traverse le temps.</figcaption>
+      </figure>
+
+      <figure class="pm-photo">
+        <img src="../images/event-3.jpg" alt="Pièce montée pour communion">
+        <figcaption class="pm-caption">Univers enfant : créativité et équilibre.</figcaption>
+      </figure>
+
+      <figure class="pm-photo">
+        <img src="../images/event-4.jpg" alt="Pièce montée fête de famille">
+        <figcaption class="pm-caption">Fête de famille : convivialité et gourmandise.</figcaption>
+      </figure>
+
+      <figure class="pm-photo">
+        <img src="../images/event-5.jpg" alt="Pièce montée célébration privée">
+        <figcaption class="pm-caption">Célébration privée : un moment sur mesure.</figcaption>
+      </figure>
+
+      <figure class="pm-photo">
+        <img src="../images/event-6.jpg" alt="Pièce montée pour baptême">
+        <figcaption class="pm-caption">Baptême : douceur, délicatesse et harmonie.</figcaption>
+      </figure>
+
+      <!-- Si tu as bien 7 photos, décommente celle-ci et mets ton fichier event-7.jpg -->
+      <!--
+      <figure class="pm-photo">
+        <img src="../images/event-7.jpg" alt="Pièce montée – événement privé">
+        <figcaption class="pm-caption">Une création pensée pour votre thème.</figcaption>
+      </figure>
+      -->
+    </section>
+
+  <!-- Bouton Accueil bas de page -->
+  <div class="page-top" style="margin-top:40px;">
+    <a href="../index.html" class="btn-back">← Accueil</a>
+  </div>
+
+  </main>
+</body>
+</html>

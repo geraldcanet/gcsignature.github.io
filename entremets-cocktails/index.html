@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Entremets & Pièces cocktails – Gérald Canet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+   html, body{
+  height: 100%;
+}
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color:#322321;
+  line-height:1.7;
+
+  /* Fond rose pastel uniforme */
+  background-color: #f7e9ec;
+
+  /* Micro-texture très discrète */
+  background-image:
+    radial-gradient(rgba(255,255,255,0.35) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+
+  background-size: 120px 120px, 160px 160px;
+  background-position: 0 0, 40px 60px;
+}
+
+
+
+    .pm-page{
+      max-width:1100px;
+      margin:0 auto;
+      padding: 0 18px 46px;
+    }
+
+    /* Zone bouton */
+    .page-top{
+      max-width:1100px;
+      margin:0 auto;
+      padding:26px 18px 0;
+      text-align:center;
+    }
+    .btn-back{
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:999px;
+      background:#7b1530;
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 10px 22px rgba(0,0,0,.14);
+      border:2px solid rgba(255,255,255,.65);
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .btn-back:hover{
+      transform:translateY(-1px);
+      filter:brightness(1.03);
+    }
+
+    .pm-top{
+      text-align:center;
+      padding: 6px 0 10px;
+    }
+    .pm-top h1{
+      margin:18px 0 6px;
+      font-size:30px;
+      letter-spacing:.02em;
+      color:#322321;
+    }
+    .pm-top p{
+      max-width:860px;
+      margin:0 auto 18px;
+      opacity:.92;
+      line-height:1.75;
+    }
+
+    /* Bloc texte */
+    .pm-textblock{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      box-shadow:0 10px 26px rgba(0,0,0,.08);
+      border-radius:18px;
+      padding:22px 24px;
+      margin: 14px 0 18px;
+    }
+    .pm-textblock h2{
+      margin:0 0 10px;
+      font-size:15px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#7a4b4b;
+    }
+    .pm-textblock p{
+      margin:0 0 12px;
+      line-height:1.8;
+      color:#322321;
+    }
+    .pm-textblock p:last-child{ margin-bottom:0; }
+
+    .pm-strong{
+      font-weight:700;
+      opacity:.96;
+    }
+
+    /* Galerie */
+    .pm-photos{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      margin: 14px 0 30px;
+    }
+    .pm-photo{ margin:0; }
+
+    .pm-photo img{
+      width:70%;
+      height:auto;
+      display:block;
+      margin:0 auto;
+      border-radius:14px;
+      box-shadow:0 10px 26px rgba(0,0,0,.10);
+    }
+
+    .pm-caption{
+      padding:12px 14px 0;
+      font-size:14px;
+      opacity:.85;
+      line-height:1.55;
+      text-align:center;
+    }
+
+    @media (max-width: 900px){
+      .pm-photo img{ width:92%; }
+    }
+
+    .pm-nextchapter{
+      margin-top: 28px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Bouton Accueil -->
+  <div class="page-top">
+    <a href="../index.html" class="btn-back">← Accueil</a>
+  </div>
+
+  <main class="pm-page">
+
+    <!-- Titre + intro -->
+    <header class="pm-top">
+      <h1>Entremets & Pièces cocktails</h1>
+      <p>
+        Des créations gourmandes pensées pour être partagées : un équilibre entre élégance, textures et émotions…
+        du premier regard à la dernière bouchée.
+      </p>
+    </header>
+
+    <!-- Texte d’ambiance -->
+    <section class="pm-textblock">
+      <h2>Une gourmandise sur mesure</h2>
+      <p>
+        Entremets, mignardises, pièces cocktails… chaque création s’adapte à votre événement : le nombre d’invités,
+        l’ambiance, les saveurs que vous aimez, et le style de réception.
+      </p>
+      <p class="pm-strong">
+        L’objectif : surprendre, régaler, et laisser un souvenir qui se raconte.
+      </p>
+    </section>
+
+    <!-- Sous-chapitre ENTREMETS -->
+    <section class="pm-textblock">
+      <h2>Entremets</h2>
+      <p>
+        Pour un anniversaire, une fête de famille ou une célébration, l’entremets offre une grande liberté de création :
+        formes, finitions, jeux de textures, et associations de saveurs.
+      </p>
+      <p>
+        Classiques revisités ou créations plus modernes… tout est pensé pour un rendu raffiné et une dégustation
+        parfaitement équilibrée.
+      </p>
+      <p class="pm-strong">
+        Quelques entremets réalisés sur mesure :
+      </p>
+    </section>
+
+    <!-- Galerie ENTREMETS (4-5 photos) -->
+    <section class="pm-photos" aria-label="Galerie – Entremets">
+      <figure class="pm-photo">
+        <img src="../images/entremet-1.jpg" alt="Entremets – création sur mesure">
+        <figcaption class="pm-caption">Anniversaire : élégance, finesse et gourmandise.</figcaption>
+      </figure>
+
+      <figure class="pm-photo">
+        <img src="../images/entremet-2.jpg" alt="Entremets – finition raffinée">
+        <figcaption class="pm-caption">Textures, contrastes, et équilibre des saveurs.</figcaption>
+      </figure>
+
+      <figure class="pm-photo">
+        <img src="../images/entremet-3.jpg" alt="Entremets – création moderne">
+        <figcaption class="pm-caption">Une signature visuelle, pensée pour votre thème.</figcaption>
+      </figure>
+
+      <figure class="pm-photo">
+        <img src="../images/entremet-4.jpg" alt="Entremets – création élégante">
+        <figcaption class="pm-caption">Finitions soignées, rendu “wow” au service du goût.</figcaption>
+      </figure>
+
+      <!-- Optionnel si tu en as 5 -->
+      <!--
+      <figure class="pm-photo">
+        <img src="../images/entremet-5.jpg" alt="Entremets – autre création sur mesure">
+        <figcaption class="pm-caption">Une création unique pour un moment unique.</figcaption>
+      </figure>
+      -->
+    </section>
+
+    <!-- Sous-chapitre PIÈCES COCKTAILS -->
+    <section class="pm-textblock pm-nextchapter">
+      <h2>Pièces cocktails & buffets gourmands</h2>
+      <p>
+        Pensées pour être dégustées facilement autour d’un buffet ou lors d’une réception, les pièces cocktails
+        allient élégance, praticité et gourmandise.
+      </p>
+      <p>
+        Assortiments sucrés sur mesure, formats individuels, plateaux harmonieux… pour une expérience conviviale
+        et raffinée.
+      </p>
+      <p class="pm-strong">
+        Quelques exemples de pièces cocktails :
+      </p>
+    </section>
+
+    <!-- Galerie COCKTAILS (2-3 photos) -->
+    <section class="pm-photos" aria-label="Galerie – Pièces cocktails">
+      <figure class="pm-photo">
+        <img src="../images/cocktail-1.jpg" alt="Large Assortiment de gourmandises">
+        <figcaption class="pm-caption">Assortiment : finesse, variété et harmonie.</figcaption>
+      </figure>
+
+    </section>
+
+    <!-- Bouton Accueil bas de page -->
+    <div class="page-top" style="margin-top:40px;">
+      <a href="../index.html" class="btn-back">← Accueil</a>
+    </div>
+
+  </main>
+</body>
+</html>
