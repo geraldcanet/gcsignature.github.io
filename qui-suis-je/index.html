@@ -47,7 +47,7 @@
     }
 
     /* =========================
-       ✅ Layout chapitre : 2 colonnes
+       Layout chapitre : 2 colonnes
        texte (gauche) + galerie (droite)
     ========================== */
     .chapter-layout{
@@ -58,16 +58,12 @@
       width: 100%;
     }
 
-    /* =========================
-       ✅ TEXTE : protection visibilité
-       (contre styles globaux)
-    ========================== */
+    /* Protection contre styles globaux */
     .timeline-text{ min-width:0; }
     .timeline-text,
     .timeline-text *{
       opacity: 1 !important;
       visibility: visible !important;
-      color: #322321 !important;
     }
     .timeline-text{
       width:100% !important;
@@ -76,8 +72,6 @@
       position:relative !important;
       z-index:5 !important;
     }
-
-    /* Important si un parent coupe */
     .timeline-item,
     .timeline-split{
       overflow: visible !important;
@@ -92,8 +86,6 @@
       display:grid;
       gap:12px;
       align-content:start;
-
-      /* ✅ auto : 2 colonnes si place, sinon 1 */
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
 
@@ -115,51 +107,94 @@
       padding:10px;
     }
 
-    /* ✅ une image "wide" prend 2 colonnes */
     .chapter-gallery .wide{ grid-column: 1 / -1; }
     .chapter-gallery .wide img{ height:190px; }
 
-    /* =========================
-       ✅ Monaco : 2 colonnes FORCÉES
-       + la wide reste full largeur
-       (pour mettre les 2 carrées côte à côte)
-    ========================== */
+    /* Monaco : 2 colonnes forcées */
     .gallery-2cols{
       grid-template-columns: repeat(2, 1fr);
     }
-    .gallery-2cols .wide{
-      grid-column: 1 / -1;
-    }
+    .gallery-2cols .wide{ grid-column: 1 / -1; }
 
     /* =========================
-       Bloc Facebook
-    ========================== */
-    .fb-proof{
-      margin-top: 10px;
-      padding: 10px 12px;
-      border-left: 3px solid rgba(122,28,44,.35);
-      background: rgba(247,245,242,.7);
-      border-radius: 10px;
-      color: rgba(50,35,33,.9);
-    }
-    .fb-proof a{
-      color:#7a1c2c;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
+   Bouton Facebook (sans changer le texte)
+========================== */
+.fb-proof{
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-left: 3px solid rgba(122,28,44,.35);
+  background: rgba(247,245,242,.7);
+  border-radius: 12px;
+  color: rgba(50,35,33,.9);
+  line-height: 1.7;
+}
+
+/* on neutralise le style "lien souligné" dans ce bloc */
+.fb-proof a{
+  text-decoration: none;
+}
+
+/* wrapper pour bien placer le bouton */
+.fb-button-wrapper{
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* le bouton */
+.fb-button{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(50,35,33,0.18);
+  color: #322321;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  backdrop-filter: blur(6px);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.fb-button:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.14);
+  background: rgba(255,255,255,0.92);
+}
+/* =========================
+   Bouton Facebook – harmonisé
+========================= */
+
+.fb-button-wrapper{
+  margin-top: 14px;
+}
+
+.btn-facebook{
+  background: linear-gradient(135deg, #7a1c2c, #5f1622);
+  color: #fff !important;
+  border: none;
+}
+
+.btn-facebook:hover{
+  background: linear-gradient(135deg, #8e2236, #6b1a28);
+  transform: translateY(-1px);
+}
+
+
 
     /* =========================
        Responsive
     ========================== */
     @media (max-width: 980px){
       .chapter-layout{
-        grid-template-columns: 1fr; /* galerie sous le texte */
+        grid-template-columns: 1fr;
       }
       .chapter-gallery{
         grid-template-columns: repeat(2, minmax(0, 1fr));
         max-width: 720px;
       }
-      /* Monaco garde 2 colonnes aussi */
       .gallery-2cols{
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -169,13 +204,8 @@
         grid-template-columns: 1fr;
         max-width: 420px;
       }
-      .chapter-gallery img{
-        height:190px;
-      }
-      /* Monaco : 1 colonne sur téléphone */
-      .gallery-2cols{
-        grid-template-columns: 1fr;
-      }
+      .chapter-gallery img{ height:190px; }
+      .gallery-2cols{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -267,15 +297,11 @@
             </p>
           </div>
 
-          <!-- ✅ classe gallery-2cols pour forcer 2 colonnes et mettre les 2 carrées côte à côte -->
           <div class="chapter-gallery gallery-2cols" aria-label="Galerie – Monaco">
             <figure class="wide"><img src="../images/monaco-1.jpg" alt="Souvenir familial en pâtisserie à Monaco"></figure>
-
             <figure><img src="../images/monaco-2.jpg" alt="Souvenir en pâtisserie à Monaco"></figure>
             <figure><img src="../images/monaco-3.jpg" alt="Souvenir en pâtisserie à Monaco"></figure>
-
             <figure class="wide"><img src="../images/monaco-4.jpg" alt="Article de presse – distinction"></figure>
-            
           </div>
 
         </div>
@@ -296,7 +322,7 @@
             </p>
 
             <p>
-              Une aventure entrepreneuriale exigeante, faite de travail, de remises en question et
+              Une aventure entreprenariale exigeante, faite de travail, de remises en question et
               de passion, durant laquelle <strong>mon épouse Claire a toujours été à mes côtés</strong>.
               Son soutien constant, son aide et sa présence, y compris dans les moments les plus difficiles,
               ont été essentiels à la réussite de ce projet.
@@ -309,12 +335,23 @@
             </p>
 
             <div class="fb-proof">
-              Pour celles et ceux qui souhaitent découvrir l’historique de mon entreprise à Menton
-              (avis, publications, réalisations), je vous invite à consulter mon ancienne page professionnelle :
-              <a href="https://www.facebook.com/P%C3%A2tisserie-Menton-G%C3%A9rald-Canet-562231193806308/" target="_blank" rel="noopener noreferrer">
-                Pâtisserie Menton – Gérald Canet (Facebook)
-              </a>.
-            </div>
+  Pour celles et ceux qui souhaitent découvrir l’historique de mon entreprise à Menton
+  (avis, publications, réalisations), je vous invite à consulter mon ancienne page professionnelle :
+  
+  <div class="fb-button-wrapper">
+    <a
+      href="https://www.facebook.com/P%C3%A2tisserie-Menton-G%C3%A9rald-Canet-562231193806308/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-qsj btn-facebook"
+      aria-label="Voir la page Facebook professionnelle de Pâtisserie Menton – Gérald Canet"
+    >
+      Facebook – Pâtisserie Menton
+    </a>
+  </div>
+</div>
+
+
           </div>
 
           <div class="chapter-gallery" aria-label="Galerie – Menton">
