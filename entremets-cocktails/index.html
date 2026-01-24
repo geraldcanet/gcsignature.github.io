@@ -1,140 +1,402 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Entremets & Pièces cocktails – Gérald Canet</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entremets raffinés et pièces cocktails pour anniversaires, buffets et réceptions à l'île Maurice. Gourmandise et élégance.">
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-   html, body{
-  height: 100%;
-}
-
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color:#322321;
-  line-height:1.7;
-
-  /* Fond rose ultra clair (sans texture) */
-  background-color: #FEF8FA;
-}
-    .pm-page{
-      max-width:1100px;
-      margin:0 auto;
-      padding: 0 18px 46px;
+    /* =========================
+       VARIABLES PAGE
+    ========================== */
+    :root {
+      --section-gap: 3rem;
     }
 
-    /* Zone bouton */
-    .page-top{
-      max-width:1100px;
-      margin:0 auto;
-      padding:26px 18px 0;
-      text-align:center;
-    }
-    .btn-back{
-      display:inline-block;
-      padding:10px 16px;
-      border-radius:999px;
-      background:#7b1530;
-      color:#fff;
-      text-decoration:none;
-      font-weight:700;
-      box-shadow:0 10px 22px rgba(0,0,0,.14);
-      border:2px solid rgba(255,255,255,.65);
-      transition: transform .15s ease, filter .15s ease;
-    }
-    .btn-back:hover{
-      transform:translateY(-1px);
-      filter:brightness(1.03);
+    /* =========================
+       PAGE CONTAINER
+    ========================== */
+    .pm-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
     }
 
-    .pm-top{
-      text-align:center;
-      padding: 6px 0 10px;
-    }
-    .pm-top h1{
-      margin:18px 0 6px;
-      font-size:30px;
-      letter-spacing:.02em;
-      color:#322321;
-    }
-    .pm-top p{
-      max-width:860px;
-      margin:0 auto 18px;
-      opacity:.92;
-      line-height:1.75;
+    /* =========================
+       PAGE TOP / NAVIGATION
+    ========================== */
+    .page-top {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 0;
+      text-align: center;
     }
 
-    /* Bloc texte */
-    .pm-textblock{
-      background:#fff;
-      border:1px solid rgba(0,0,0,.06);
-      box-shadow:0 10px 26px rgba(0,0,0,.08);
-      border-radius:18px;
-      padding:22px 24px;
-      margin: 14px 0 18px;
-    }
-    .pm-textblock h2{
-      margin:0 0 10px;
-      font-size:15px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:#7a4b4b;
-    }
-    .pm-textblock p{
-      margin:0 0 12px;
-      line-height:1.8;
-      color:#322321;
-    }
-    .pm-textblock p:last-child{ margin-bottom:0; }
-
-    .pm-strong{
-      font-weight:700;
-      opacity:.96;
+    /* =========================
+       HEADER / TITRE
+    ========================== */
+    .pm-top {
+      text-align: center;
+      padding: 1rem 0 2rem;
+      animation: fadeInUp 0.8s ease-out forwards;
     }
 
-    /* Galerie */
-    .pm-photos{
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-      margin: 14px 0 30px;
-    }
-    .pm-photo{ margin:0; }
-
-    .pm-photo img{
-      width:70%;
-      height:auto;
-      display:block;
-      margin:0 auto;
-      border-radius:14px;
-      box-shadow:0 10px 26px rgba(0,0,0,.10);
+    .pm-top h1 {
+      font-family: var(--font-display);
+      font-size: 2.75rem;
+      font-weight: 600;
+      color: var(--color-burgundy);
+      margin: 1.5rem 0 1rem;
+      position: relative;
+      display: inline-block;
     }
 
-    .pm-caption{
-      padding:12px 14px 0;
-      font-size:14px;
-      opacity:.85;
-      line-height:1.55;
-      text-align:center;
+    .pm-top h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--color-gold),
+        transparent
+      );
     }
 
-    @media (max-width: 900px){
-      .pm-photo img{ width:92%; }
+    .pm-top p {
+      max-width: 860px;
+      margin: 1.5rem auto;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--color-burgundy);
+      line-height: 1.8;
+      opacity: 0.92;
     }
 
-    .pm-nextchapter{
-      margin-top: 28px;
+    /* =========================
+       TEXT BLOCKS / SECTIONS
+    ========================== */
+    .pm-textblock {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 24px;
+      box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+      padding: 2rem 2.5rem;
+      margin: var(--section-gap) 0;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .pm-textblock.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .pm-textblock:hover {
+      border-color: var(--color-gold);
+      box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(212, 175, 55, 0.3);
+    }
+
+    .pm-textblock h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--color-burgundy);
+      margin: 0 0 1.5rem;
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+
+    .pm-textblock h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        var(--color-gold),
+        transparent
+      );
+    }
+
+    .pm-textblock p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--color-dark);
+      margin: 0 0 1rem;
+      opacity: 0.92;
+    }
+
+    .pm-textblock p:last-child {
+      margin-bottom: 0;
+    }
+
+    .pm-strong {
+      font-weight: 600;
+      color: var(--color-burgundy);
+    }
+
+    .pm-nextchapter {
+      margin-top: calc(var(--section-gap) * 1.5);
+    }
+
+    /* =========================
+       GALERIE PHOTOS
+    ========================== */
+    .pm-photos {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      margin: var(--section-gap) 0;
+    }
+
+    .pm-photo {
+      margin: 0;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .pm-photo.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .pm-photo img {
+      width: 75%;
+      max-width: 800px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 20px;
+      border: 2px solid var(--color-gold);
+      box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(212, 175, 55, 0.2);
+      transition: all 0.4s ease;
+    }
+
+    .pm-photo:hover img {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 
+        0 25px 60px rgba(0, 0, 0, 0.18),
+        0 0 0 3px var(--color-gold);
+    }
+
+    .pm-caption {
+      padding: 1rem 1.5rem 0;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--color-gray);
+      line-height: 1.6;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Icône décorative pour les sections */
+    .section-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-rose-light), var(--color-rose));
+      border: 2px solid var(--color-gold);
+      color: var(--color-burgundy);
+    }
+
+    .pm-textblock-with-icon {
+      position: relative;
+      text-align: center;
+    }
+
+    /* =========================
+       DIVIDER DÉCORATIF
+    ========================== */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin: calc(var(--section-gap) * 1.2) 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    .section-divider.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--color-gold) 50%,
+        transparent
+      );
+      opacity: 0.6;
+    }
+
+    .section-divider-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-burgundy), var(--color-burgundy-dark));
+      border: 2px solid var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 4px 12px rgba(125, 31, 49, 0.3);
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+    @media (max-width: 900px) {
+      :root {
+        --section-gap: 2rem;
+      }
+
+      .pm-photo img {
+        width: 90%;
+      }
+
+      .pm-textblock {
+        padding: 1.5rem 1.75rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pm-top h1 {
+        font-size: 2.25rem;
+      }
+
+      .pm-top p {
+        font-size: 1.05rem;
+      }
+
+      .pm-textblock h2 {
+        font-size: 1.5rem;
+      }
+
+      .pm-textblock,
+      .pm-photo {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .pm-page {
+        padding: 0 1rem 3rem;
+      }
+
+      .page-top {
+        padding: 1.5rem 1rem 0;
+      }
+
+      .pm-top h1 {
+        font-size: 2rem;
+      }
+
+      .pm-top p {
+        font-size: 1rem;
+      }
+
+      .pm-textblock {
+        padding: 1.25rem 1.5rem;
+      }
+
+      .pm-photo img {
+        width: 95%;
+        border-radius: 16px;
+      }
+
+      .pm-caption {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem 0;
+      }
+
+      .section-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1rem;
+      }
+
+      .section-divider {
+        gap: 1rem;
+      }
+
+      .section-divider-icon {
+        width: 35px;
+        height: 35px;
+      }
     }
   </style>
 </head>
 
 <body>
+  <!-- Particules dorées -->
+  <div class="golden-particles" aria-hidden="true"></div>
 
-  <!-- Bouton Accueil -->
-  <div class="page-top">
-    <a href="../index.html" class="btn-back">← Accueil</a>
+  <!-- Navigation -->
+  <div class="page-top fade-in">
+    <a href="../index.html" class="btn-qsj">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M15 8H1M7 14L1 8l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Accueil</span>
+    </a>
   </div>
 
   <main class="pm-page">
@@ -148,23 +410,35 @@ body{
       </p>
     </header>
 
-    <!-- Texte d’ambiance -->
-    <section class="pm-textblock">
+    <!-- Texte d'ambiance -->
+    <section class="pm-textblock pm-textblock-with-icon">
+      <div class="section-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
       <h2>Une gourmandise sur mesure</h2>
       <p>
-        Entremets, mignardises, pièces cocktails… chaque création s’adapte à votre événement : le nombre d’invités,
-        l’ambiance, les saveurs que vous aimez, et le style de réception.
+        Entremets, mignardises, pièces cocktails… chaque création s'adapte à votre événement : le nombre d'invités,
+        l'ambiance, les saveurs que vous aimez, et le style de réception.
       </p>
       <p class="pm-strong">
-        L’objectif : surprendre, régaler, et laisser un souvenir qui se raconte.
+        L'objectif : surprendre, régaler, et laisser un souvenir qui se raconte.
       </p>
     </section>
 
     <!-- Sous-chapitre ENTREMETS -->
-    <section class="pm-textblock">
+    <section class="pm-textblock pm-textblock-with-icon">
+      <div class="section-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
       <h2>Entremets</h2>
       <p>
-        Pour un anniversaire, une fête de famille ou une célébration, l’entremets offre une grande liberté de création :
+        Pour un anniversaire, une fête de famille ou une célébration, l'entremets offre une grande liberté de création :
         formes, finitions, jeux de textures, et associations de saveurs.
       </p>
       <p>
@@ -176,42 +450,48 @@ body{
       </p>
     </section>
 
-    <!-- Galerie ENTREMETS (4-5 photos) -->
+    <!-- Galerie ENTREMETS -->
     <section class="pm-photos" aria-label="Galerie – Entremets">
       <figure class="pm-photo">
-        <img src="../images/entremet-1.jpg" alt="Entremets – création sur mesure">
+        <img src="../images/entremet-1.jpg" alt="Entremets – création sur mesure" loading="lazy">
         <figcaption class="pm-caption">Anniversaire : élégance, finesse et gourmandise.</figcaption>
       </figure>
 
       <figure class="pm-photo">
-        <img src="../images/entremet-2.jpg" alt="Entremets – finition raffinée">
+        <img src="../images/entremet-2.jpg" alt="Entremets – finition raffinée" loading="lazy">
         <figcaption class="pm-caption">Textures, contrastes, et équilibre des saveurs.</figcaption>
       </figure>
 
       <figure class="pm-photo">
-        <img src="../images/entremet-3.jpg" alt="Entremets – création moderne">
+        <img src="../images/entremet-3.jpg" alt="Entremets – création moderne" loading="lazy">
         <figcaption class="pm-caption">Une signature visuelle, pensée pour votre thème.</figcaption>
       </figure>
 
       <figure class="pm-photo">
-        <img src="../images/entremet-4.jpg" alt="Entremets – création élégante">
-        <figcaption class="pm-caption">Finitions soignées, rendu “wow” au service du goût.</figcaption>
+        <img src="../images/entremet-4.jpg" alt="Entremets – création élégante" loading="lazy">
+        <figcaption class="pm-caption">Finitions soignées, rendu "wow" au service du goût.</figcaption>
       </figure>
-
-      <!-- Optionnel si tu en as 5 -->
-      <!--
-      <figure class="pm-photo">
-        <img src="../images/entremet-5.jpg" alt="Entremets – autre création sur mesure">
-        <figcaption class="pm-caption">Une création unique pour un moment unique.</figcaption>
-      </figure>
-      -->
     </section>
 
+    <!-- Divider décoratif -->
+    <div class="section-divider">
+      <div class="section-divider-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
     <!-- Sous-chapitre PIÈCES COCKTAILS -->
-    <section class="pm-textblock pm-nextchapter">
+    <section class="pm-textblock pm-textblock-with-icon pm-nextchapter">
+      <div class="section-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+          <path d="M9 2v6h6V2M3 8h18M5 8l1.5 13a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1L19 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
       <h2>Pièces cocktails & buffets gourmands</h2>
       <p>
-        Pensées pour être dégustées facilement autour d’un buffet ou lors d’une réception, les pièces cocktails
+        Pensées pour être dégustées facilement autour d'un buffet ou lors d'une réception, les pièces cocktails
         allient élégance, praticité et gourmandise.
       </p>
       <p>
@@ -223,20 +503,52 @@ body{
       </p>
     </section>
 
-    <!-- Galerie COCKTAILS (2-3 photos) -->
+    <!-- Galerie COCKTAILS -->
     <section class="pm-photos" aria-label="Galerie – Pièces cocktails">
       <figure class="pm-photo">
-        <img src="../images/cocktail-1.jpg" alt="Large Assortiment de gourmandises">
+        <img src="../images/cocktail-1.jpg" alt="Large Assortiment de gourmandises" loading="lazy">
         <figcaption class="pm-caption">Assortiment : finesse, variété et harmonie.</figcaption>
       </figure>
-
     </section>
 
     <!-- Bouton Accueil bas de page -->
-    <div class="page-top" style="margin-top:40px;">
-      <a href="../index.html" class="btn-back">← Accueil</a>
+    <div class="page-top" style="margin-top: 3rem;">
+      <a href="../index.html" class="btn-qsj">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M15 8H1M7 14L1 8l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Retour à l'accueil</span>
+      </a>
     </div>
 
   </main>
+
+  <!-- Script pour les animations au scroll -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Animation au scroll
+      const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            // Ajouter un délai progressif pour un effet de cascade
+            setTimeout(() => {
+              entry.target.classList.add('revealed');
+            }, index * 100);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observer les sections et photos
+      document.querySelectorAll('.pm-textblock, .pm-photo, .section-divider').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
 </html>

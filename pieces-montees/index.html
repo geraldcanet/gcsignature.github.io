@@ -1,140 +1,348 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Pièces montées – Gérald Canet</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Créations sur mesure de pièces montées pour mariages et événements à l'île Maurice. Élégance, raffinement et gourmandise.">
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    html, body{
-  height: 100%;
-}
-
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color:#322321;
-  line-height:1.7;
-
-  /* Fond rose ultra clair (sans texture) */
-  background-color: #FEF8FA;
-}
-    .pm-page{
-      max-width:1100px;
-      margin:0 auto;
-      padding: 0 18px 46px;
+    /* =========================
+       VARIABLES PAGE
+    ========================== */
+    :root {
+      --section-gap: 3rem;
     }
 
-    /* Zone bouton */
-    .page-top{
-      max-width:1100px;
-      margin:0 auto;
-      padding:26px 18px 0;
-      text-align:center;
-    }
-    .btn-back{
-      display:inline-block;
-      padding:10px 16px;
-      border-radius:999px;
-      background:#7b1530;
-      color:#fff;
-      text-decoration:none;
-      font-weight:700;
-      box-shadow:0 10px 22px rgba(0,0,0,.14);
-      border:2px solid rgba(255,255,255,.65);
-      transition: transform .15s ease, filter .15s ease;
-    }
-    .btn-back:hover{
-      transform:translateY(-1px);
-      filter:brightness(1.03);
+    /* =========================
+       PAGE CONTAINER
+    ========================== */
+    .pm-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
     }
 
-    .pm-top{
-      text-align:center;
-      padding: 6px 0 10px;
-    }
-    .pm-top h1{
-      margin:18px 0 6px;
-      font-size:30px;
-      letter-spacing:.02em;
-      color:#322321;
-    }
-    .pm-top p{
-      max-width:860px;
-      margin:0 auto 18px;
-      opacity:.92;
-      line-height:1.75;
+    /* =========================
+       PAGE TOP / NAVIGATION
+    ========================== */
+    .page-top {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 0;
+      text-align: center;
     }
 
-    /* Bloc texte */
-    .pm-textblock{
-      background:#fff;
-      border:1px solid rgba(0,0,0,.06);
-      box-shadow:0 10px 26px rgba(0,0,0,.08);
-      border-radius:18px;
-      padding:22px 24px;
-      margin: 14px 0 18px;
-    }
-    .pm-textblock h2{
-      margin:0 0 10px;
-      font-size:15px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:#7a4b4b;
-    }
-    .pm-textblock p{
-      margin:0 0 12px;
-      line-height:1.8;
-      color:#322321;
-    }
-    .pm-textblock p:last-child{ margin-bottom:0; }
-
-    .pm-strong{
-      font-weight:700;
-      opacity:.96;
+    /* =========================
+       HEADER / TITRE
+    ========================== */
+    .pm-top {
+      text-align: center;
+      padding: 1rem 0 2rem;
+      animation: fadeInUp 0.8s ease-out forwards;
     }
 
-    /* Galerie */
-    .pm-photos{
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-      margin: 14px 0 30px;
-    }
-    .pm-photo{
-      margin:0;
-    }
-    .pm-photo img{
-      width:70%;
-      height:auto;
-      display:block;
-      margin:0 auto;
-      border-radius:14px;
-      box-shadow:0 10px 26px rgba(0,0,0,.10);
-    }
-    .pm-caption{
-      padding:12px 14px 0;
-      font-size:14px;
-      opacity:.85;
-      line-height:1.55;
-      text-align:center;
+    .pm-top h1 {
+      font-family: var(--font-display);
+      font-size: 2.75rem;
+      font-weight: 600;
+      color: var(--color-burgundy);
+      margin: 1.5rem 0 1rem;
+      position: relative;
+      display: inline-block;
     }
 
-    @media (max-width: 900px){
-      .pm-photo img{ width:92%; }
+    .pm-top h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--color-gold),
+        transparent
+      );
     }
 
-    .pm-nextchapter{
-      margin-top: 28px;
+    .pm-top p {
+      max-width: 860px;
+      margin: 1.5rem auto;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--color-burgundy);
+      line-height: 1.8;
+      opacity: 0.92;
+    }
+
+    /* =========================
+       TEXT BLOCKS / SECTIONS
+    ========================== */
+    .pm-textblock {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 24px;
+      box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+      padding: 2rem 2.5rem;
+      margin: var(--section-gap) 0;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .pm-textblock.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .pm-textblock:hover {
+      border-color: var(--color-gold);
+      box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(212, 175, 55, 0.3);
+    }
+
+    .pm-textblock h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--color-burgundy);
+      margin: 0 0 1.5rem;
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+
+    .pm-textblock h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        var(--color-gold),
+        transparent
+      );
+    }
+
+    .pm-textblock p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--color-dark);
+      margin: 0 0 1rem;
+      opacity: 0.92;
+    }
+
+    .pm-textblock p:last-child {
+      margin-bottom: 0;
+    }
+
+    .pm-strong {
+      font-weight: 600;
+      color: var(--color-burgundy);
+    }
+
+    .pm-nextchapter {
+      margin-top: calc(var(--section-gap) * 1.5);
+    }
+
+    /* =========================
+       GALERIE PHOTOS
+    ========================== */
+    .pm-photos {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      margin: var(--section-gap) 0;
+    }
+
+    .pm-photo {
+      margin: 0;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .pm-photo.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .pm-photo img {
+      width: 75%;
+      max-width: 800px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 20px;
+      border: 2px solid var(--color-gold);
+      box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(212, 175, 55, 0.2);
+      transition: all 0.4s ease;
+    }
+
+    .pm-photo:hover img {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 
+        0 25px 60px rgba(0, 0, 0, 0.18),
+        0 0 0 3px var(--color-gold);
+    }
+
+    .pm-caption {
+      padding: 1rem 1.5rem 0;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--color-gray);
+      line-height: 1.6;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Icône décorative pour les sections */
+    .section-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-rose-light), var(--color-rose));
+      border: 2px solid var(--color-gold);
+      color: var(--color-burgundy);
+    }
+
+    .pm-textblock-with-icon {
+      position: relative;
+      text-align: center;
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+    @media (max-width: 900px) {
+      :root {
+        --section-gap: 2rem;
+      }
+
+      .pm-photo img {
+        width: 90%;
+      }
+
+      .pm-textblock {
+        padding: 1.5rem 1.75rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pm-top h1 {
+        font-size: 2.25rem;
+      }
+
+      .pm-top p {
+        font-size: 1.05rem;
+      }
+
+      .pm-textblock h2 {
+        font-size: 1.5rem;
+      }
+
+      .pm-textblock,
+      .pm-photo {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .pm-page {
+        padding: 0 1rem 3rem;
+      }
+
+      .page-top {
+        padding: 1.5rem 1rem 0;
+      }
+
+      .pm-top h1 {
+        font-size: 2rem;
+      }
+
+      .pm-top p {
+        font-size: 1rem;
+      }
+
+      .pm-textblock {
+        padding: 1.25rem 1.5rem;
+      }
+
+      .pm-photo img {
+        width: 95%;
+        border-radius: 16px;
+      }
+
+      .pm-caption {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem 0;
+      }
+
+      .section-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1rem;
+      }
     }
   </style>
 </head>
 
 <body>
+  <!-- Particules dorées -->
+  <div class="golden-particles" aria-hidden="true"></div>
 
-  <!-- Bouton Accueil -->
-  <div class="page-top">
-    <a href="../index.html" class="btn-back">← Accueil</a>
+  <!-- Navigation -->
+  <div class="page-top fade-in">
+    <a href="../index.html" class="btn-qsj">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M15 8H1M7 14L1 8l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Accueil</span>
+    </a>
   </div>
 
   <main class="pm-page">
@@ -143,32 +351,43 @@ body{
     <header class="pm-top">
       <h1>Pièces montées</h1>
       <p>
-        Une pièce montée, c’est bien plus qu’un dessert : c’est une mise en scène, une émotion, un instant qu’on attend…
+        Une pièce montée, c'est bien plus qu'un dessert : c'est une mise en scène, une émotion, un instant qu'on attend…
         et dont on se souvient.
       </p>
     </header>
 
     <!-- Intro -->
-    <section class="pm-textblock">
+    <section class="pm-textblock pm-textblock-with-icon">
+      <div class="section-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
       <h2>Une création sur mesure</h2>
       <p>
         Chaque pièce montée est pensée comme une œuvre unique, en harmonie avec votre univers : le lieu,
-        l’ambiance, les couleurs, les détails… tout compte.
+        l'ambiance, les couleurs, les détails… tout compte.
       </p>
       <p class="pm-strong">
-        L’objectif : créer un “wow” visuel… et un vrai moment de gourmandise.
+        L'objectif : créer un "wow" visuel… et un vrai moment de gourmandise.
       </p>
     </section>
 
     <!-- Mariages -->
-    <section class="pm-textblock">
+    <section class="pm-textblock pm-textblock-with-icon">
+      <div class="section-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
       <h2>Mariages</h2>
       <p>
         Couleurs, thème, fleurs, style de réception : nous définissons ensemble les proportions, les finitions
-        et l’esprit général, pour un rendu élégant et parfaitement cohérent.
+        et l'esprit général, pour un rendu élégant et parfaitement cohérent.
       </p>
       <p>
-        Classique, moderne, floral, minimaliste… on cherche toujours l’équilibre entre esthétique, finesse et dégustation.
+        Classique, moderne, floral, minimaliste… on cherche toujours l'équilibre entre esthétique, finesse et dégustation.
       </p>
       <p class="pm-strong">
         Au moment de la découverte, la pièce montée devient naturellement la cerise sur le gâteau : un instant suspendu,
@@ -179,37 +398,44 @@ body{
     <!-- Galerie Mariages -->
     <section class="pm-photos" aria-label="Galerie pièces montées – Mariages">
       <figure class="pm-photo">
-        <img src="../images/pm-1.jpg" alt="Pièce montée de mariage sur mesure">
+        <img src="../images/pm-1.jpg" alt="Pièce montée de mariage sur mesure" loading="lazy">
         <figcaption class="pm-caption">Détails, finitions, harmonie des couleurs.</figcaption>
       </figure>
 
       <figure class="pm-photo">
-        <img src="../images/pm-2.jpg" alt="Pièce montée – création élégante">
+        <img src="../images/pm-2.jpg" alt="Pièce montée – création élégante" loading="lazy">
         <figcaption class="pm-caption">Une pièce pensée comme une mise en scène.</figcaption>
       </figure>
 
       <figure class="pm-photo">
-        <img src="../images/pm-3.jpg" alt="Pièce montée – style floral">
+        <img src="../images/pm-3.jpg" alt="Pièce montée – style floral" loading="lazy">
         <figcaption class="pm-caption">Raffinement, équilibre, et personnalité.</figcaption>
       </figure>
 
       <figure class="pm-photo">
-        <img src="../images/pm-4.jpg" alt="Pièce montée – autre création de mariage">
+        <img src="../images/pm-4.jpg" alt="Pièce montée – autre création de mariage" loading="lazy">
         <figcaption class="pm-caption">Chaque création est unique.</figcaption>
       </figure>
 
       <figure class="pm-photo">
-        <img src="../images/pm-5.jpg" alt="Pièce montée – autre création de mariage">
+        <img src="../images/pm-5.jpg" alt="Pièce montée – autre création de mariage" loading="lazy">
         <figcaption class="pm-caption">Choisissez votre thème… pas de limite dans la création.</figcaption>
       </figure>
     </section>
 
     <!-- Événements -->
-    <section class="pm-textblock pm-nextchapter">
+    <section class="pm-textblock pm-textblock-with-icon pm-nextchapter">
+      <div class="section-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
       <h2>Événements</h2>
       <p>
         Anniversaires, baptêmes, communions, fêtes de famille, célébrations privées…
-        Chaque occasion mérite une création sur mesure, pensée pour s’intégrer parfaitement à votre ambiance.
+        Chaque occasion mérite une création sur mesure, pensée pour s'intégrer parfaitement à votre ambiance.
       </p>
       <p>
         Ici, on peut jouer avec les thèmes et les couleurs (avec justesse), tout en gardant la signature :
@@ -223,49 +449,74 @@ body{
     <!-- Galerie Événements -->
     <section class="pm-photos" aria-label="Galerie pièces montées – Événements">
       <figure class="pm-photo">
-        <img src="../images/event-1.jpg" alt="Pièce montée pour anniversaire">
+        <img src="../images/event-1.jpg" alt="Pièce montée pour anniversaire" loading="lazy">
         <figcaption class="pm-caption">Anniversaire : une création joyeuse et raffinée.</figcaption>
       </figure>
 
       <figure class="pm-photo">
-        <img src="../images/event-2.jpg" alt="Pièce montée pour anniversaire de mariage">
-        <figcaption class="pm-caption">Noces de diamant : quand l’amour traverse le temps.</figcaption>
+        <img src="../images/event-2.jpg" alt="Pièce montée pour anniversaire de mariage" loading="lazy">
+        <figcaption class="pm-caption">Noces de diamant : quand l'amour traverse le temps.</figcaption>
       </figure>
 
       <figure class="pm-photo">
-        <img src="../images/event-3.jpg" alt="Pièce montée pour communion">
+        <img src="../images/event-3.jpg" alt="Pièce montée pour communion" loading="lazy">
         <figcaption class="pm-caption">Univers enfant : créativité et équilibre.</figcaption>
       </figure>
 
       <figure class="pm-photo">
-        <img src="../images/event-4.jpg" alt="Pièce montée fête de famille">
+        <img src="../images/event-4.jpg" alt="Pièce montée fête de famille" loading="lazy">
         <figcaption class="pm-caption">Fête de famille : convivialité et gourmandise.</figcaption>
       </figure>
 
       <figure class="pm-photo">
-        <img src="../images/event-5.jpg" alt="Pièce montée célébration privée">
+        <img src="../images/event-5.jpg" alt="Pièce montée célébration privée" loading="lazy">
         <figcaption class="pm-caption">Célébration privée : un moment sur mesure.</figcaption>
       </figure>
 
       <figure class="pm-photo">
-        <img src="../images/event-6.jpg" alt="Pièce montée pour baptême">
+        <img src="../images/event-6.jpg" alt="Pièce montée pour baptême" loading="lazy">
         <figcaption class="pm-caption">Baptême : douceur, délicatesse et harmonie.</figcaption>
       </figure>
-
-      <!-- Si tu as bien 7 photos, décommente celle-ci et mets ton fichier event-7.jpg -->
-      <!--
-      <figure class="pm-photo">
-        <img src="../images/event-7.jpg" alt="Pièce montée – événement privé">
-        <figcaption class="pm-caption">Une création pensée pour votre thème.</figcaption>
-      </figure>
-      -->
     </section>
 
-  <!-- Bouton Accueil bas de page -->
-  <div class="page-top" style="margin-top:40px;">
-    <a href="../index.html" class="btn-back">← Accueil</a>
-  </div>
+    <!-- Bouton Accueil bas de page -->
+    <div class="page-top" style="margin-top: 3rem;">
+      <a href="../index.html" class="btn-qsj">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M15 8H1M7 14L1 8l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Retour à l'accueil</span>
+      </a>
+    </div>
 
   </main>
+
+  <!-- Script pour les animations au scroll -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Animation au scroll
+      const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            // Ajouter un délai progressif pour un effet de cascade
+            setTimeout(() => {
+              entry.target.classList.add('revealed');
+            }, index * 100);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observer les sections et photos
+      document.querySelectorAll('.pm-textblock, .pm-photo').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
 </html>
