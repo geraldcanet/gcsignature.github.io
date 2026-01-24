@@ -1,6 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ===============================
+     POP-UP OUVERTURE
+  ================================ */
+  const popup = document.getElementById('opening-popup');
+  const closeBtn = popup?.querySelector('.opening-popup-close');
+  
+  // Date d'ouverture : 16 février 2025
+  const openingDate = new Date('2025-02-16');
+  const today = new Date();
+  
+  // Afficher le popup seulement si on est avant la date d'ouverture
+  if (popup && today < openingDate) {
+    // Afficher après 1.5 secondes
+    setTimeout(() => {
+      popup.classList.add('show');
+    }, 1500);
+  }
+  
+  // Fermer le popup
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      popup.classList.remove('show');
+    });
+  }
+  
+  // Fermer en cliquant sur le fond
+  if (popup) {
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.classList.remove('show');
+      }
+    });
+  }
+
+  /* ===============================
      SLIDER PRINCIPAL AMÉLIORÉ
   ================================ */
   const slider = document.querySelector('.slider');

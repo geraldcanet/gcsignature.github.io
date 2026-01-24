@@ -68,6 +68,42 @@ body {
 }
 
 /* ===============================
+   BANDEAU OUVERTURE
+================================ */
+.opening-banner {
+  background: linear-gradient(135deg, var(--color-burgundy), var(--color-burgundy-dark));
+  color: var(--color-cream);
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-bottom: 2px solid var(--color-gold);
+}
+
+.opening-banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.opening-banner strong {
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .opening-banner {
+    font-size: 0.85rem;
+    padding: 10px 15px;
+  }
+}
+
+/* ===============================
    PARTICULES DORÉES DÉCORATIVES
 ================================ */
 .golden-particles {
@@ -1028,4 +1064,239 @@ footer::before {
 .slide img,
 .univers-media img {
   will-change: transform;
+}
+
+/* ===============================
+   POP-UP OUVERTURE
+================================ */
+.opening-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.opening-popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.opening-popup-content {
+  position: relative;
+  background: linear-gradient(135deg, #fff 0%, #faf8f5 100%);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(212, 175, 55, 0.3);
+  border: 2px solid var(--color-gold);
+  transform: scale(0.8);
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.opening-popup.show .opening-popup-content {
+  transform: scale(1);
+}
+
+.opening-popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: rgba(125, 31, 49, 0.1);
+  color: var(--color-burgundy);
+  font-size: 1.5rem;
+  line-height: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.opening-popup-close:hover {
+  background: var(--color-burgundy);
+  color: white;
+  transform: rotate(90deg);
+}
+
+.opening-popup-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: bounceIn 0.8s ease 0.2s backwards;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.opening-popup-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-burgundy);
+  margin: 0 0 0.5rem;
+}
+
+.opening-popup-content p {
+  font-size: 1rem;
+  color: var(--color-gray);
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.opening-date {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-burgundy);
+  margin: 1rem 0;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--color-rose-light), var(--color-rose));
+  border-radius: 12px;
+  border: 2px solid var(--color-gold);
+  display: inline-block;
+}
+
+.opening-note {
+  font-size: 0.9rem;
+  font-style: italic;
+  opacity: 0.8;
+  margin-top: 1rem;
+}
+
+/* ===============================
+   BOUTON WHATSAPP FLOTTANT
+================================ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 4px 20px rgba(37, 211, 102, 0.4),
+    0 0 0 0 rgba(37, 211, 102, 0.5);
+  text-decoration: none;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  animation: whatsappPulse 2s infinite;
+  overflow: hidden;
+}
+
+.whatsapp-float:hover {
+  width: auto;
+  padding: 0 20px;
+  border-radius: 30px;
+  box-shadow: 
+    0 6px 30px rgba(37, 211, 102, 0.5),
+    0 0 0 0 rgba(37, 211, 102, 0.5);
+  animation: none;
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover svg {
+  transform: scale(1.1);
+}
+
+.whatsapp-text {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-left: 10px;
+  white-space: nowrap;
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover .whatsapp-text {
+  opacity: 1;
+  max-width: 150px;
+}
+
+@keyframes whatsappPulse {
+  0%, 100% {
+    box-shadow: 
+      0 4px 20px rgba(37, 211, 102, 0.4),
+      0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  50% {
+    box-shadow: 
+      0 4px 20px rgba(37, 211, 102, 0.4),
+      0 0 0 15px rgba(37, 211, 102, 0);
+  }
+}
+
+/* Responsive WhatsApp Button */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+  }
+  
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .opening-popup-content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .opening-popup-icon {
+    font-size: 3rem;
+  }
+  
+  .opening-popup-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .opening-date {
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+  }
 }
