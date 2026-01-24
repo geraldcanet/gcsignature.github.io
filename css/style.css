@@ -68,6 +68,46 @@ body {
 }
 
 /* ===============================
+   BANDEAU OUVERTURE (toujours visible)
+================================ */
+.opening-banner {
+  background: linear-gradient(135deg, var(--color-burgundy), var(--color-burgundy-dark));
+  color: var(--color-cream);
+  text-align: center;
+  padding: 14px 20px;
+  font-size: 1rem;
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-bottom: 3px solid var(--color-gold);
+}
+
+.opening-banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.opening-banner strong {
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .opening-banner {
+    font-size: 0.9rem;
+    padding: 12px 15px;
+  }
+  
+  .opening-banner-content {
+    gap: 6px;
+  }
+}
+
+/* ===============================
    PARTICULES DORÉES DÉCORATIVES
 ================================ */
 .golden-particles {
