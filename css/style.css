@@ -68,42 +68,6 @@ body {
 }
 
 /* ===============================
-   BANDEAU OUVERTURE
-================================ */
-.opening-banner {
-  background: linear-gradient(135deg, var(--color-burgundy), var(--color-burgundy-dark));
-  color: var(--color-cream);
-  text-align: center;
-  padding: 12px 20px;
-  font-size: 0.95rem;
-  position: relative;
-  z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  border-bottom: 2px solid var(--color-gold);
-}
-
-.opening-banner-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.opening-banner strong {
-  font-weight: 600;
-}
-
-@media (max-width: 600px) {
-  .opening-banner {
-    font-size: 0.85rem;
-    padding: 10px 15px;
-  }
-}
-
-/* ===============================
    PARTICULES DORÉES DÉCORATIVES
 ================================ */
 .golden-particles {
@@ -1195,63 +1159,69 @@ footer::before {
    BOUTON WHATSAPP FLOTTANT
 ================================ */
 .whatsapp-float {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #25d366, #128c7e);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: fixed !important;
+  bottom: 25px !important;
+  right: 25px !important;
+  width: 60px !important;
+  height: 60px !important;
+  background: linear-gradient(135deg, #25d366, #128c7e) !important;
+  color: white !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   box-shadow: 
     0 4px 20px rgba(37, 211, 102, 0.4),
-    0 0 0 0 rgba(37, 211, 102, 0.5);
-  text-decoration: none;
-  z-index: 9999;
-  transition: all 0.3s ease;
-  animation: whatsappPulse 2s infinite;
-  overflow: hidden;
+    0 0 0 0 rgba(37, 211, 102, 0.5) !important;
+  text-decoration: none !important;
+  z-index: 9999 !important;
+  transition: all 0.3s ease !important;
+  animation: whatsappPulse 2s infinite !important;
+  overflow: hidden !important;
+  border: none !important;
+  padding: 0 !important;
+  min-width: 60px !important;
+  min-height: 60px !important;
 }
 
 .whatsapp-float:hover {
-  width: auto;
-  padding: 0 20px;
-  border-radius: 30px;
+  width: auto !important;
+  padding: 0 20px !important;
+  border-radius: 30px !important;
   box-shadow: 
     0 6px 30px rgba(37, 211, 102, 0.5),
-    0 0 0 0 rgba(37, 211, 102, 0.5);
-  animation: none;
+    0 0 0 0 rgba(37, 211, 102, 0.5) !important;
+  animation: none !important;
 }
 
 .whatsapp-float svg {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
+  width: 32px !important;
+  height: 32px !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.3s ease !important;
+  fill: white !important;
 }
 
 .whatsapp-float:hover svg {
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
 }
 
 .whatsapp-text {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin-left: 10px;
-  white-space: nowrap;
-  opacity: 0;
-  max-width: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  margin-left: 10px !important;
+  white-space: nowrap !important;
+  opacity: 0 !important;
+  max-width: 0 !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+  color: white !important;
 }
 
 .whatsapp-float:hover .whatsapp-text {
-  opacity: 1;
-  max-width: 150px;
+  opacity: 1 !important;
+  max-width: 200px !important;
 }
 
 @keyframes whatsappPulse {
